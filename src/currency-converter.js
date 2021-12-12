@@ -1,4 +1,8 @@
 // Exchange rate kata
+const ToUSDConversionRate = (currencyToConvertFrom) => {
+  return(1/USDConversionRate(currencyToConvertFrom))
+}
+
 const USDConversionRate = (currencyToConvertTo) => {
   const USDExchangeRates = {
     'USD': 1.0,
@@ -25,6 +29,7 @@ const convert = (amount, baseCurrency, conversionCurrency) => {
 }
 
 module.exports = {
+  convert: convert,
   USDConversionRate: USDConversionRate,
-  convert: convert
+  ToUSDConversionRate: ToUSDConversionRate
 }

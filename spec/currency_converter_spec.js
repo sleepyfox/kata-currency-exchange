@@ -1,5 +1,7 @@
 const { convert,
-        USDConversionRate } = require('../src/currency-converter')
+        USDConversionRate,
+        ToUSDConversionRate
+      } = require('../src/currency-converter')
 
 describe('A currency converter API', () => {
   describe('A currency converter function', () => {
@@ -31,6 +33,16 @@ describe('A currency converter API', () => {
 
     it('should convert USD to GBP at 0.78569', () => {
       expect(USDConversionRate('GBP')).toBe(0.78569)
+    })
+  })
+
+  describe('A to USD conversion rate lookup', () => {
+    it('should convert USD to USD at 1.0', () => {
+      expect(ToUSDConversionRate('USD')).toBe(1.0)
+    })
+
+    it('should convert EUR to USD at 1.13876', () => {
+      expect(ToUSDConversionRate('EUR')).toBeCloseTo(1.13876, 5)
     })
   })
 })
