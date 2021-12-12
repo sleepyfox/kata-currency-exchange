@@ -1,11 +1,12 @@
 const { convert,
         USDConversionRate,
         toUSDConversionRate,
-        conversionRate
+        conversionRate,
+        currencyAdd
       } = require('../src/currency-converter')
 
 describe('A currency converter API', () => {
-  describe('A currency converter function', () => {
+  describe('A currency converter', () => {
     it('should convert 1 USD to 1 USD', () => {
       expect(convert(1, 'USD', 'USD')).toBe(1)
     })
@@ -29,7 +30,7 @@ describe('A currency converter API', () => {
     it('should convert 13.12 EUR to 11.7386 GBP', () => {
       expect(convert(13.12, 'EUR', 'GBP')).toBeCloseTo(11.7386, 5)
     })
-})
+  })
 
   describe('A USD conversion rate lookup', () => {
     it('should show rate of USD to USD at 1.0', () => {
@@ -72,5 +73,16 @@ describe('A currency converter API', () => {
     it('should show rate of EUR to GBP at 0.89471', () => {
       expect(conversionRate('EUR', 'GBP')).toBeCloseTo(0.89471, 5)
     })
+  })
+
+  describe('A currency adder', () => {
+    it('should add 13.12 EUR to 99 GBP and get 110.74 GBP', () => {
+      expect(currencyAdd(13.12, 'EUR', 99, 'GBP')).toBeCloseTo(110.7386, 5)
+    })
+
+    // it('should add 13.12 EUR to 99 GBP and get 185.64 CAD', () => {
+    //   const result = currencyAdd(13.12, 'EUR', 99, 'GBP')
+    //   expect(convert(result, 'GBP', 'CAD')).toBeCloseTo(185.64, 5)
+    // })
   })
 })

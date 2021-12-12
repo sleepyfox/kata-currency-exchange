@@ -28,9 +28,14 @@ const convert = (amount, baseCurrency, conversionCurrency) => {
   return(amount * conversionRate(baseCurrency, conversionCurrency))
 }
 
+const currencyAdd = (amount1, baseCurrency, amount2, conversionCurrency) => {
+  return(amount2 + convert(amount1, baseCurrency, conversionCurrency))
+}
+
 module.exports = {
   convert:             convert,
   USDConversionRate:   USDConversionRate,
   toUSDConversionRate: toUSDConversionRate,
-  conversionRate:      conversionRate
+  conversionRate:      conversionRate,
+  currencyAdd:         currencyAdd
 }
