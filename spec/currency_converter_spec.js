@@ -20,6 +20,11 @@ describe('A currency converter API', () => {
     it('should convert 1 USD to 0.87815 EUR', () => {
      expect(convert(1, 'USD', 'EUR')).toBe(0.87815)
     })
+
+    it('should convert 10 USD to 7.8569 GBP', () => {
+      expect(convert(10, 'USD', 'GBP')).toBeCloseTo(7.8569, 5)
+    })
+
   })
 
   describe('A USD conversion rate lookup', () => {
