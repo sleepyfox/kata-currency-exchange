@@ -31,6 +31,7 @@ Randomized with seed 12813 (jasmine --random=true --seed=12813)
 
 Given the following Exchange rates from USD
 
+```
 Currency code 	Exchange rate
 EUR 	0.87815
 GBP 	0.78569
@@ -41,6 +42,7 @@ AUD 	1.43534
 CNY 	6.88191
 MYR 	4.13785
 COP 	3203.18
+```
 
 * Implement an End Point which can return the exchange rate from Euro to Dollars
 * Extend your solution to convert US dollars to British Pounds
