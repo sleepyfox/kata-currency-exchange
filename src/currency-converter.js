@@ -25,11 +25,7 @@ const conversionRate = (fromCurrency, toCurrency) => {
 }
 
 const convert = (amount, baseCurrency, conversionCurrency) => {
-  if (baseCurrency != 'USD') {
-    throw new Error(`Unexpected base currency "${baseCurrency}"`)
-  } else {
-    return(amount * USDConversionRate(conversionCurrency))
-  }
+  return(amount * conversionRate(baseCurrency, conversionCurrency))
 }
 
 module.exports = {

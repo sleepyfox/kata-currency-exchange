@@ -25,7 +25,11 @@ describe('A currency converter API', () => {
     it('should convert 10 USD to 7.8569 GBP', () => {
       expect(convert(10, 'USD', 'GBP')).toBeCloseTo(7.8569, 5)
     })
-  })
+
+    it('should convert 13.12 EUR to 11.7386 GBP', () => {
+      expect(convert(13.12, 'EUR', 'GBP')).toBeCloseTo(11.7386, 5)
+    })
+})
 
   describe('A USD conversion rate lookup', () => {
     it('should show rate of USD to USD at 1.0', () => {
