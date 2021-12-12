@@ -16,12 +16,18 @@ const USDConversionRate = (currencyToConvertTo) => {
   return(USDExchangeRates[currencyToConvertTo])
 }
 
-const ToUSDConversionRate = (currencyToConvertFrom) => {
+const toUSDConversionRate = (currencyToConvertFrom) => {
   return(1/USDConversionRate(currencyToConvertFrom))
 }
 
 const conversionRate = (fromCurrency, toCurrency) => {
-  return(1)
+  if (fromCurrency == 'USD') {
+    return(USDConversionRate(toCurrency))
+  } else if(toCurrency == 'USD') {
+    return(toUSDConversionRate(fromCurrency))
+  } else {
+    return(1)
+  }
 }
 
 const convert = (amount, baseCurrency, conversionCurrency) => {
@@ -35,6 +41,6 @@ const convert = (amount, baseCurrency, conversionCurrency) => {
 module.exports = {
   convert:             convert,
   USDConversionRate:   USDConversionRate,
-  ToUSDConversionRate: ToUSDConversionRate,
+  toUSDConversionRate: toUSDConversionRate,
   conversionRate:      conversionRate
 }
