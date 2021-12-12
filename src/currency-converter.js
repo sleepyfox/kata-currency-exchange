@@ -21,13 +21,7 @@ const toUSDConversionRate = (currencyToConvertFrom) => {
 }
 
 const conversionRate = (fromCurrency, toCurrency) => {
-  if (fromCurrency == 'USD') {
-    return(USDConversionRate(toCurrency))
-  } else if(toCurrency == 'USD') {
-    return(toUSDConversionRate(fromCurrency))
-  } else {
     return(toUSDConversionRate(fromCurrency) * USDConversionRate(toCurrency))
-  }
 }
 
 const convert = (amount, baseCurrency, conversionCurrency) => {
