@@ -3,8 +3,11 @@ const currencyConversionRate = (baseCurrency, currencyToConvertTo) => {
     'USD': 1.0,
     'EUR': 0.87815
   }
-
-  return(exchangeRates[currencyToConvertTo])
+  if (baseCurrency != 'USD') {
+    throw new Error(`Unexpected base currency "${baseCurrency}"`)
+  } else {
+    return(exchangeRates[currencyToConvertTo])
+  }
 }
 
 const convert = (amount, baseCurrency, conversionCurrency) => {
@@ -21,9 +24,9 @@ describe('A currency converter API', () => {
       expect(convert(2, 'USD', 'USD')).toBe(2)
     })
 
-    // it('should convert 1 USD  to 0.87815 EUR', () => {
-    //  expect(convert(1, 'USD', 'EUR')).toBe(0.87815)
-    // })
+    it('should convert 1 USD  to 0.87815 EUR', () => {
+     expect(convert(1, 'USD', 'EUR')).toBe(0.87815)
+    })
   })
 
   describe('A conversion rate lookup', () => {
@@ -33,6 +36,10 @@ describe('A currency converter API', () => {
 
     it('should convert USD to EUR at 0.87815', () => {
       expect(currencyConversionRate('USD', 'EUR')).toBe(0.87815)
+    })
+
+    it('should error if non-USD base currency', () => {
+      expect(() => currencyConversionRate('EUR', 'USD')).toThrow()
     })
   })
 })
