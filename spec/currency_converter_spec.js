@@ -1,7 +1,9 @@
-const convert = (amount, baseCurrency, conversionCurrency) => {
-  const currencyConversionRate = 1
+const currencyConversionRate = (baseCurrency, currencyToConvertTo) => {
+  return(1)
+}
 
-  return(amount * currencyConversionRate)
+const convert = (amount, baseCurrency, conversionCurrency) => {
+  return(amount * currencyConversionRate(baseCurrency, conversionCurrency))
 }
 
 describe('A currency converter API', () => {
