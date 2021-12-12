@@ -1,6 +1,7 @@
 const { convert,
         USDConversionRate,
-        ToUSDConversionRate
+        ToUSDConversionRate,
+        conversionRate
       } = require('../src/currency-converter')
 
 describe('A currency converter API', () => {
@@ -48,6 +49,12 @@ describe('A currency converter API', () => {
 
     it('should show rate of EUR to USD at 1.13876', () => {
       expect(ToUSDConversionRate('EUR')).toBeCloseTo(1.13876, 5)
+    })
+  })
+
+  describe('A generic currency rate lookup', () => {
+    it('should show rate of USD to USD at 1.0', () => {
+      expect(conversionRate('USD', 'USD')).toBe(1.0)
     })
   })
 })
