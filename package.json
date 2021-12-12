@@ -2,7 +2,7 @@
   "name": "code-kata-starter",
   "version": "1.0.0",
   "description": "A starter project with a passing test",
-  "main": "src/main.js",
+  "main": "src/currency-converter.js",
   "scripts": {
     "lint": "jshint src spec",
     "test": "npm run lint && jasmine"

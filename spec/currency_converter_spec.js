@@ -1,19 +1,4 @@
-const currencyConversionRate = (baseCurrency, currencyToConvertTo) => {
-  const exchangeRates = {
-    'USD': 1.0,
-    'EUR': 0.87815,
-    'GBP': 0.78569
-  }
-  if (baseCurrency != 'USD') {
-    throw new Error(`Unexpected base currency "${baseCurrency}"`)
-  } else {
-    return(exchangeRates[currencyToConvertTo])
-  }
-}
-
-const convert = (amount, baseCurrency, conversionCurrency) => {
-  return(amount * currencyConversionRate(baseCurrency, conversionCurrency))
-}
+const { convert, currencyConversionRate } = require('../src/currency-converter')
 
 describe('A currency converter API', () => {
   describe('A currency converter function', () => {
