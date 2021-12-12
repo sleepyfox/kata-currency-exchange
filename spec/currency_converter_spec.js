@@ -80,9 +80,9 @@ describe('A currency converter API', () => {
       expect(currencyAdd(13.12, 'EUR', 99, 'GBP')).toBeCloseTo(110.7386, 5)
     })
 
-    // it('should add 13.12 EUR to 99 GBP and get 185.64 CAD', () => {
-    //   const result = currencyAdd(13.12, 'EUR', 99, 'GBP')
-    //   expect(convert(result, 'GBP', 'CAD')).toBeCloseTo(185.64, 5)
-    // })
+    it('should add 13.12 EUR to 99 GBP and get 185.64 CAD', () => {
+      const result = currencyAdd(13.12, 'EUR', 99, 'GBP')
+      expect(convert(result, 'GBP', 'CAD')).toBeCloseTo(185.64, 2)
+    })
   })
 })
