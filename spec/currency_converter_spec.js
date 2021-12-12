@@ -58,7 +58,11 @@ describe('A currency converter API', () => {
     })
 
     it('should show rate of USD to GBP at 0.78569', () => {
-      expect(USDConversionRate('GBP')).toBe(0.78569)
+      expect(conversionRate('USD', 'GBP')).toBe(0.78569)
+    })
+
+    it('should show rate of EUR to USD at 1.13876', () => {
+      expect(conversionRate('EUR', 'USD')).toBeCloseTo(1.13876, 5)
     })
   })
 })
