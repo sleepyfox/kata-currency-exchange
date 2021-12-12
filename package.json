@@ -1,0 +1,32 @@
+{
+  "name": "code-kata-starter",
+  "version": "1.0.0",
+  "description": "A starter project with a passing test",
+  "main": "src/main.js",
+  "scripts": {
+    "lint": "jshint src spec",
+    "test": "npm run lint && jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sleepyfox/code-kata-starter.git"
+  },
+  "keywords": [
+    "kata",
+    "starter"
+  ],
+  "author": "@sleepyfox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sleepyfox/code-kata-starter/issues"
+  },
+  "homepage": "https://github.com/sleepyfox/code-kata-starter#readme",
+  "devDependencies": {
+    "jasmine": "3.x",
+    "jshint": "2.x"
+  },
+  "jshintConfig": {
+    "esversion": 11,
+    "asi": true
+  }
+}
