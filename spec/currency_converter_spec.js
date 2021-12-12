@@ -20,4 +20,10 @@ describe('A currency converter API', () => {
     //  expect(convert(1, 'USD', 'EUR')).toBe(0.87815)
     // })
   })
+
+  describe('A conversion rate lookup', () => {
+    it('should convert USD to USD at 1.0', () => {
+      expect(currencyConversionRate('USD', 'USD')).toBe(1.0)
+    })
+  })
 })
