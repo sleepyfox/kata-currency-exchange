@@ -26,7 +26,7 @@ const conversionRate = (fromCurrency, toCurrency) => {
   } else if(toCurrency == 'USD') {
     return(toUSDConversionRate(fromCurrency))
   } else {
-    return(1)
+    return(toUSDConversionRate(fromCurrency) * USDConversionRate(toCurrency))
   }
 }
 

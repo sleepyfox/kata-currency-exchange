@@ -25,7 +25,6 @@ describe('A currency converter API', () => {
     it('should convert 10 USD to 7.8569 GBP', () => {
       expect(convert(10, 'USD', 'GBP')).toBeCloseTo(7.8569, 5)
     })
-
   })
 
   describe('A USD conversion rate lookup', () => {
@@ -63,6 +62,11 @@ describe('A currency converter API', () => {
 
     it('should show rate of EUR to USD at 1.13876', () => {
       expect(conversionRate('EUR', 'USD')).toBeCloseTo(1.13876, 5)
+    })
+
+    // EUR->GBP = EUR->USD->GBP = 1/0.87815*0.78569
+    it('should show rate of EUR to GBP at 0.89471', () => {
+      expect(conversionRate('EUR', 'GBP')).toBeCloseTo(0.89471, 5)
     })
   })
 })
