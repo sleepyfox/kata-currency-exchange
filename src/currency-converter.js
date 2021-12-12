@@ -1,7 +1,6 @@
 // Exchange rate kata
-
-const currencyConversionRate = (baseCurrency, currencyToConvertTo) => {
-  const exchangeRates = {
+const USDConversionRate = (currencyToConvertTo) => {
+  const USDExchangeRates = {
     'USD': 1.0,
     'EUR': 0.87815,
     'GBP': 0.78569,
@@ -13,19 +12,19 @@ const currencyConversionRate = (baseCurrency, currencyToConvertTo) => {
     'MYR': 4.13785,
     'COP': 3203.18
   }
-  
-  if (baseCurrency != 'USD') {
-    throw new Error(`Unexpected base currency "${baseCurrency}"`)
-  } else {
-    return(exchangeRates[currencyToConvertTo])
-  }
+
+  return(USDExchangeRates[currencyToConvertTo])
 }
 
 const convert = (amount, baseCurrency, conversionCurrency) => {
-  return(amount * currencyConversionRate(baseCurrency, conversionCurrency))
+  if (baseCurrency != 'USD') {
+    throw new Error(`Unexpected base currency "${baseCurrency}"`)
+  } else {
+    return(amount * USDConversionRate(conversionCurrency))
+  }
 }
 
 module.exports = {
-  currencyConversionRate: currencyConversionRate,
+  USDConversionRate: USDConversionRate,
   convert: convert
 }
