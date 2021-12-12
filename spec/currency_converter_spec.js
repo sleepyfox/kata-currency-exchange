@@ -1,5 +1,10 @@
 const currencyConversionRate = (baseCurrency, currencyToConvertTo) => {
-  return(1)
+  const exchangeRates = {
+    'USD': 1.0,
+    'EUR': 0.87815
+  }
+
+  return(exchangeRates[currencyToConvertTo])
 }
 
 const convert = (amount, baseCurrency, conversionCurrency) => {
@@ -24,6 +29,10 @@ describe('A currency converter API', () => {
   describe('A conversion rate lookup', () => {
     it('should convert USD to USD at 1.0', () => {
       expect(currencyConversionRate('USD', 'USD')).toBe(1.0)
+    })
+
+    it('should convert USD to EUR at 0.87815', () => {
+      expect(currencyConversionRate('USD', 'EUR')).toBe(0.87815)
     })
   })
 })
