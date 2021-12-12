@@ -1,7 +1,8 @@
 const currencyConversionRate = (baseCurrency, currencyToConvertTo) => {
   const exchangeRates = {
     'USD': 1.0,
-    'EUR': 0.87815
+    'EUR': 0.87815,
+    'GBP': 0.78569
   }
   if (baseCurrency != 'USD') {
     throw new Error(`Unexpected base currency "${baseCurrency}"`)
@@ -40,6 +41,10 @@ describe('A currency converter API', () => {
 
     it('should error if non-USD base currency', () => {
       expect(() => currencyConversionRate('EUR', 'USD')).toThrow()
+    })
+
+    it('should convert USD to GBP at 0.78569', () => {
+      expect(currencyConversionRate('USD', 'GBP')).toBe(0.78569)
     })
   })
 })
