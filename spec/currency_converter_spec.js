@@ -1,12 +1,12 @@
 const { convert,
-        USDConversionRate,
+        USDConversionRate,   // Looks like Class, but isn't :-/
         toUSDConversionRate,
         conversionRate,
         currencyAdd
       } = require('../src/currency-converter')
 
 describe('A currency converter API', () => {
-  describe('A currency converter', () => {
+  describe('when converting an amount of a currency', () => {
     it('should convert 1 USD to 1 USD', () => {
       expect(convert(1, 'USD', 'USD')).toBe(1)
     })
@@ -32,7 +32,7 @@ describe('A currency converter API', () => {
     })
   })
 
-  describe('A USD conversion rate lookup', () => {
+  describe('A from USD conversion rate lookup', () => {
     it('should show rate of USD to USD at 1.0', () => {
       expect(USDConversionRate('USD')).toBe(1.0)
     })
