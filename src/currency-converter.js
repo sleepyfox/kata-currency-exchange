@@ -13,7 +13,7 @@ const USDConversionRate = (currencyToConvertTo) => {
     'COP': 3203.18
   }
 
-  return(USDExchangeRates[currencyToConvertTo])
+  return(USDExchangeRates[currencyToConvertTo] || 0)
 }
 
 const toUSDConversionRate = (currencyToConvertFrom) => {

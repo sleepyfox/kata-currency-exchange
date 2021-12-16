@@ -19,6 +19,10 @@ describe('A currency converter API', () => {
      expect(convert(1, 'USD', 'EUR')).toBe(0.87815)
     })
 
+    it('should return zero when presented with an unrecognised currency', () => {
+      expect(convert(3, 'USD', 'XYZ')).toBe(0)
+    })
+
     it('should convert 1 USD to 0.87815 EUR', () => {
      expect(convert(1, 'USD', 'EUR')).toBe(0.87815)
     })
